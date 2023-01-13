@@ -80,6 +80,11 @@ $(document).ready(function () {
   });
   getProjects();
   $(".modal").modal();
+});
 
-  addProjectToApp(formData);
+// connect to the socket
+let socket = io();
+socket.on("number", (msg) => {
+  // console.log("Random number: " + msg);
+  $("#socket-random-number").html(msg);
 });
